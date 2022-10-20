@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="author" content="Lisa Noblet">
+    <meta name="keywords" content="">
+    <meta name='copyright' content="">
+    <meta property="og:title" content="" />
+    <meta property="og:type" content="" />
+    <meta property="og:image" content="" />
+    <meta property="og:url" content="" />
+    <meta property="og:description" content="" />
+    <meta name='language' content="fr">
+    <title>GAME</title>
+    <link rel="icon" type="image/png" href="favicon.png">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Rubik:300,400,500,700,900">
+</head>
+
+<body>
+    <section id="introduction_section">
+
+        <div class="start_div">
+            <h1>Jeu</h1>
+
+            <button class="start_button">Let's play</button>
+        </div>
+
+        <div class="introduction_div">
+            <p> Aujoud'hui, c'est l'anniversaire de ton coloc. La soirée surprise est dans ton appartement mais
+                malheureusement, tu viens seulement de te réveiller de ta sieste.
+                L'appartement est en désordre et rien n'est préparé. Tout le monde arrive à 21h. <br>
+                Tu as donc 2 minutes pour tout ranger et décorer l'appartement pour ne pas décevoir ton coloc.
+            
+                A 21h, tes colocs arrivent : la musique d'anniversaire doit être lancée, les lumières éteintes...
+            </p>
+
+            <button class="play_button">Game on</button>
+        </div>
+
+        <div class="game_div">
+
+            <!-- section pour mettre les éléments du jeu qui ne sont pas directement dans le fond -->
+
+            <!-- CADRES à redresser -->
+
+            <img src="medias/objets/cadre1.svg" class="cadres cadre1">
+            <img src="medias/objets/cadre2.svg" class="cadres cadre2">
+            <img src="medias/objets/cadre4.svg" class="cadres cadre4">
+            <img src="medias/objets/cadre5.svg" class="cadres cadre5">
+            <img src="medias/objets/cadre6.svg" class="cadres cadre6">
+            <img src="medias/objets/cadre7.svg" class="cadres cadre7">
+
+
+            <!-- FEUILLES à enlever -->
+          
+            <img src="medias/objets/plante1.svg" class="plante1">
+            <img src="medias/objets/feuille1.svg" class="feuilles feuille1">
+            <img src="medias/objets/feuille2.svg" class="feuilles feuille2">
+            <img src="medias/objets/feuille3.svg" class="feuilles feuille3">
+           
+
+            <img src="medias/objets/plante2.svg" class="plante2">
+            <img src="medias/objets/feuille2_1.svg" class="feuilles feuille2_1">
+            <img src="medias/objets/feuille2_2.svg" class="feuilles feuille2_2">
+            <img src="medias/objets/feuille2_3.svg" class="feuilles feuille2_3">
+           
+
+            <img src="medias/objets/plante3.svg" class="plante3">
+            <img src="medias/objets/plante4.svg" class="plante4">
+
+            <img src="medias/objets/coussin1.svg" class="coussins coussin1">
+            <img src="medias/objets/coussin2.svg" class="coussins coussin2">
+            <img src="medias/objets/coussin3.svg" class="coussins coussin3">
+            <img src="medias/objets/coussin4.svg" class="coussins coussin4">
+           
+
+
+            <img src="medias/objets/livre1.svg" class="img_livre livre1">
+            <img src="medias/objets/livre2.svg" class="img_livre livre2">
+            <img src="medias/objets/livre1_range.svg" class="img_livre_range livre1_range">
+            <img src="medias/objets/livre2_range.svg" class="img_livre_range livre2_range">
+
+            <!-- <div class="img_livre livre1"></div>
+             <div class="img_livre livre2"></div> -->
+
+            <img src="medias/objets/todolist.svg" class="todolist">
+
+
+
+            <!-- <p id="clock"></p> -->
+            <p id="timer">00:00:00</p>
+
+
+
+        </div>
+
+    </section>
+
+
+
+    <section id="outils_section">
+
+        <section id="inventaire_section">
+
+            <div class="inventaire_div">
+                <img src="medias/objets/todolist.svg" class="inventaire_todolist">
+            </div>
+
+            <div class="inventaire_div">
+                <img src="medias/objets/feuille2.png" class="inventaire_feuilles">
+                <p class="p_compteur_feuilles"> </p>
+            
+            </div>
+
+            <div class="inventaire_div">
+                <img src="medias/objets/todolist.png" class="">
+            </div>
+
+            <div class="inventaire_div">
+                <img src="medias/objets/todolist.png" class="">
+            </div>
+
+            <div class="inventaire_div">
+                <img src="medias/objets/todolist.png" class="">
+            </div>
+
+            <div class="inventaire_div">
+                <img src="medias/objets/todolist.png" class="">
+            </div>
+
+
+
+        </section>
+
+
+
+        <section id="todo_section">
+            <h2>To-do list</h2>
+
+            <p>Nettoyer le salon</p>
+            <ul>
+                <li class="todo_cadres">Replacer les cadres</p>
+                <li class="todo_livres">Ranger les livres</p>
+                <li class="todo_feuilles">Jeter les feuilles des plantes</p>
+            </ul>
+            <p>Décorer le salon</p>
+            <p>Poser la nourriture</p>
+
+
+        </section>
+
+
+
+
+
+
+    </section>
+
+    <section id="fin_jeu_section">
+        
+        <div class="bravo">
+            
+        <p>Tu as gagné !</p>
+        </div>
+
+        <div class="dommage">
+            
+            <p>Tu as perdu !</p>
+            </div>
+
+    </section>
+
+
+
+    <script src="js/script.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,413 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter&family=Open+Sans&family=Patrick+Hand&display=swap');
+
+
+
+/* Général  */
+* {
+    text-align: center;
+}
+
+body {
+    font-family: "Jost", sans-serif;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    background-color: #E6E6E6;
+    background: linear-gradient(320deg, rgba(224, 196, 255, 0.2957515769979867) 0%, rgba(255, 203, 224, 0.30135381789434523) 100%);
+
+}
+
+h1,
+h2,
+p {
+    font-family: 'Inter', sans-serif;
+    font-family: 'Patrick Hand', cursive;
+
+}
+
+/* SECTION DU JEU */
+section:nth-of-type(1) {
+    /* width: 950px;
+    height: 500px; 
+    margin-top: 80px;*/
+    width: 1024px;
+    height: 576px;
+    margin-top: 4vh;
+    border: solid 2px black;
+    border-radius: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#timer {
+    font-size: 1.5em;
+    position: absolute;
+    left: 69vw;
+}
+
+/* SECTION INVENTAIRE */
+
+#outils_section {
+    display: none;
+}
+
+
+#inventaire_section {
+    width: 8vw;
+    height: 70vh;
+    position: absolute;
+    right: 5vw;
+    top: 1vh;
+    border: solid 2px black;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    background: white;
+}
+
+
+/* .inventaire_section>div {
+    width: 5vw;
+    height: 5vh;
+    border: solid 1px rgb(203, 53, 53);
+    border-radius: 20px;
+   
+    background-color: beige;
+}  */
+
+
+/* SECTION INVENTAIRE */
+.inventaire_div {
+    width: 4vw;
+    height: 4vw;
+    margin-bottom: 2vh;
+    border-radius: 30%;
+
+    border: solid 1px rgb(61, 61, 61);
+    background-color: beige;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.inventaire_div>img {
+    border-radius: 20px;
+}
+
+
+
+/* OBJETS INDIVIDUELS DE L'INVENTAIRE*/
+
+.inventaire_todolist {
+    display: none;
+}
+
+.todolist {
+    width: 5%;
+    height: auto;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+}
+
+.inventaire_feuilles {
+    display: none;
+}
+
+.p_compteur_feuilles{
+    z-index: 2;
+    position: absolute;
+top: 16.5vh;
+right: 2.5vw;
+}
+
+
+
+
+
+
+
+
+/* div de jeu */
+.start_div {
+    display: block;
+}
+
+.introduction_div {
+    display: none;
+    width: 50vw;
+}
+
+.introduction_div>p {
+    font-size: 1.2em;
+}
+
+.game_div {
+    width: 100%;
+    height: 100%;
+    display: none;
+    background-image: url("../medias/fond.svg");
+   
+    background-size: cover;
+    border-radius: 40px;
+
+ 
+}
+
+
+
+
+/* SECTION TODO LIST */
+#todo_section {
+    width: 15vw;
+    height: 60vh;
+    position: absolute;
+    left: 2vw;
+    top: 6vh;
+    transform: rotate(-5deg);
+    border: solid 1px black;
+    border-radius: 20px;
+    font-size: 1.1em;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    background-color: #FDE8E7;
+
+    display: none;
+
+}
+
+.li_barres{
+    text-decoration: line-through;
+    color: grey;
+}
+
+
+/*-----------------------------------------------------------------------------------------*/
+
+
+
+
+/* JEU */
+
+/* cadres à redresser */
+
+.cadres{
+    height: 10vh;
+    width: auto;
+    position: absolute;
+}
+
+.cadre1 {
+    height: 22vh;
+    left: 42vw;
+    top: 22vh;
+    transform: rotate(-10deg);
+
+}
+
+.cadre2 {
+    left: 50vw;
+    top: 22vh;
+    transform: rotate(-7deg);
+
+}
+
+.cadre4 {
+    left: 58vw;
+    top: 22vh;
+}
+
+
+.cadre5 {
+    left: 58vw;
+    top: 34vh;
+    transform: rotate(8deg);
+
+}
+
+.cadre6 {
+    left: 54vw;
+    top: 34vh;
+    transform: rotate(5deg);
+
+}
+
+.cadre7 {
+    left: 50vw;
+    top: 34vh;
+    transform: rotate(3deg);
+
+}
+
+.cadres-remove-rotation {
+    transform: rotate(0deg);
+
+}
+
+
+
+/* FEUILLES */
+
+
+.plante1 {
+    height: 40vh;
+    width: auto;
+    position: absolute;
+    left: 70vw;
+    top: 48vh;
+    z-index: 2;
+
+}      
+
+.feuilles{
+    height: 2vh;
+    width: auto;
+    position: absolute;
+}
+           
+
+.feuille1 {
+    left: 60vw;
+    top: 88vh;
+
+} 
+.feuille2 {
+    left: 75vw;
+    top: 85vh;
+
+} 
+
+.feuille3 {
+    left: 70vw;
+    top: 88vh;
+
+} 
+
+
+.plante2 {
+    height: 20vh;
+    width: auto;
+    position: absolute;
+    left: 35vw;
+    top: 54vh;
+}      
+    
+
+.feuille2_1 {
+    left: 34vw;
+    top: 74vh;
+} 
+.feuille2_2 {
+    left: 36vw;
+    top: 74vh;
+} 
+
+.feuille2_3 {
+    left: 38vw;
+    top: 74vh;
+} 
+
+
+.plante3 {
+    height: 10vh;
+    width: auto;
+    position: absolute;
+    left: 20vw;
+    top: 34.5vh;
+    transform: rotate(80deg);
+}   
+.plante3_range {
+    left: 20vw;
+    top: 33vh;
+
+    transform: rotate(0deg);
+} 
+
+
+.plante4 {
+    height: 10vh;
+    width: auto;
+    position: absolute;
+    left: 27vw;
+    top: 48vh;
+    transform: rotate(-100deg);
+
+}   
+
+.plante4_range {
+    left: 27vw;
+    top: 45vh;
+    transform: rotate(0deg);
+
+}   
+
+
+/* COUSSINS */
+
+.coussins{
+    height: 12vh;
+    width: auto;
+    position: absolute;
+}
+           
+
+.coussin1 {
+    left: 40vw;
+    top: 65vh;
+    
+   
+
+} 
+.coussin2 {
+    left: 50vw;
+    top: 78vh;
+    
+    transform: rotate(-60deg);
+
+} 
+
+.coussin3 {
+    left: 59vw;
+    top: 70vh;
+} 
+
+.coussin4 {
+    left: 28vw;
+    top: 64vh;
+} 
+
+
+.coussin1_range {
+    left: 44vw;
+    top: 53vh;
+} 
+
+.coussin2_range {
+    left: 46vw;
+    top: 54vh;
+    transform: rotate(0deg);
+} 
+
+.coussin3_range {
+    left: 64vw;
+    top: 53vh;
+} 
+
+.coussin4_range {
+    left: 55vw;
+    top: 53vh;
+} 
+
+/* LIVRES*/

@@ -1,0 +1,250 @@
+
+
+
+
+// let livres = document.querySelectorAll('.img_livre');
+// for (i of livres) {
+//   i.addEventListener('click', function() {
+//     this.style.display='none';
+
+
+
+//     // bool_feuilles[i] = true;
+// //         bool_feuilles[i] = true;
+// //     console.log(bool_feuilles[i]);
+// // console.log(bool_feuilles);
+//   });
+// }
+
+// let livre1 = document.querySelector(".livre1");
+// let livre2 = document.querySelector(".livre2");
+
+// let livre1_range = document.querySelector(".livre1_range");
+// let livre2_range = document.querySelector(".livre2_range");
+
+
+// livre1.addEventListener("click", function() {
+//     livre1.style.display='none';
+//     livre1_range.style.display='block';
+// });
+
+// livre2.addEventListener("click", function() {
+//     livre2.style.display='none';
+//     livre2_range.style.display='block';
+// });
+
+// }
+
+
+
+// let elementsArray = document.querySelectorAll(".img_livre");
+
+// elementsArray.forEach(function(elem) {
+    
+//     elem.addEventListener("click", function() {
+        
+//         //elem.style.display='none';
+        
+//         elem.classList.remove(".livre1");
+//     elem.classList.add(".livre1_range");
+//     });
+// });
+
+
+
+// [ Element1, Element2 ].forEach(function(element) {
+//     element.addEventListener("input", function() {
+//        this function does stuff
+//     });
+//  });
+
+// bool_feuilles[i] = true;
+//         bool_feuilles[i] = true;
+//     console.log(bool_feuilles[i]);
+// console.log(bool_feuilles);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.cadre1 {
+    /* background-image: url("../medias/objets/cadre1.svg");
+    background-size: contain; */
+
+    height: 5vh;
+    width: auto;
+    position: absolute;
+    left: 34vw;
+    top: 31vh;
+    transform: rotate(-10deg);
+
+}
+
+.cadre2 {
+    /* background-image: url("../medias/objets/cadre2.svg");
+    background-size: cover; */
+
+    height: 5vh;
+    width: auto;
+    position: absolute;
+    left: 35vw;
+    top: 22vh;
+    transform: rotate(-20deg);
+
+}
+
+
+
+
+.img_feuille {
+    height: 2%;
+    width: 3%;
+    position: absolute;
+}
+
+.feuille1 {
+    left: 45vw;
+    top: 80vh;
+}
+
+.feuille2 {
+    left: 53vw;
+    top: 77vh;
+}
+
+.feuille3 {
+    left: 44vw;
+    top: 78vh;
+}
+
+.feuille4 {
+    left: 52vw;
+    top: 80vh;
+}
+
+.feuille5 {
+    left: 45vw;
+    top: 82vh;
+}
+
+
+
+
+
+/* 
+.img_livre{
+    height: 4%;
+    width: 6%;
+    position: absolute;
+}
+
+.img_livre_range{
+    height: 6%;
+    width: 8%;
+    position: absolute;
+    display: none;
+}
+
+.livre1 {
+    left: 10vw;
+    top: 80vh;
+}
+
+.livre2 {
+    left: 12vw;
+    top: 70vh;
+}
+
+.livre1_range {
+    left: 17vw;
+    top: 41vh;
+}
+
+.livre2_range {
+    left: 16vw;
+    top: 41vh;
+} */
+
+.img_livre {
+    height: 4%;
+    width: 6%;
+    position: absolute;
+}
+
+.livre1 {
+    left: 20vw;
+    top: 75vh;
+    height: 4%;
+    width: 6%;
+    position: absolute;
+}
+
+.livre2 {
+    left: 22vw;
+    top: 65vh;
+    height: 4%;
+    width: 6%;
+    position: absolute;
+}
+
+.livre1_range {
+    left: 1vw;
+    top: 49vh;
+    height: 4%;
+    width: 6%;
+    position: absolute;
+    display: none;
+}
+
+.livre2_range {
+    left: 17.5vw;
+    top: 51vh;
+    height: 4%;
+    width: 6%;
+    position: absolute;
+    display: none;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* SECTION DE FIN DE JEU */
+#fin_jeu_section {
+    display: none;
+}
+
+.bravo{
+    display: none;
+}
+
+.dommage{
+    display: none;
+}
+
