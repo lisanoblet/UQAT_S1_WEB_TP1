@@ -18,6 +18,7 @@ elementsArray.forEach(function(elem) {
 
 // BOOLEENS POUR FAIRE AVANCER LE JEU
 
+//let cadres_repositionnes = false;
 let cadres_repositionnes = false;
 let feuilles_retirees = false;
 let livres_ranges = false;
@@ -155,20 +156,43 @@ function cleanRoom() {
 
 
     let cadres = document.querySelectorAll('.cadres');
+    let cadres_bool = new Array();
 
 
     for (j of cadres) {
         j.addEventListener('click', function () {
             this.classList.add("cadres-remove-rotation");
+            cadres_bool[this.id] = true;
+            console.log(cadres_bool)
+            //
+            // console.log(compteur_cadres)
+            //validation des cadres pas bonne 
 
-            compteur_cadres++;
-            console.log(compteur_cadres)
-            if (compteur_cadres > 1) {
-                cadres_repositionnes = true;
-                let todo_cadres = document.querySelector('.todo_cadres');
+            for (i = 0; i < cadres_bool.length; i++) {
 
-                todo_cadres.classList.add("li_barres");
-                console.log("bravo2")
+                while (cadres_bool[i] == true) {
+
+                    compteur_cadres++;
+                }
+                console.log(compteur_cadres)
+                if (compteur_cadres > 6) {
+                    cadres_repositionnes = true;
+                    let todo_cadres = document.querySelector('.todo_cadres');
+                    todo_cadres.classList.add("li_barres");
+
+                }
+compteur_cadres = 0;
+
+                // if (cadres_bool[i] == false) {
+                //     cadres_repositionnes = false;
+
+                //     console.log("bravo2")
+                // } else {
+                //     cadres_repositionnes = true;
+                //     let todo_cadres = document.querySelector('.todo_cadres');
+                //     todo_cadres.classList.add("li_barres");
+
+                // }
             }
         });
 
@@ -290,22 +314,58 @@ function decorateRoom() {
 
     let etagere_fermee = document.querySelector(".etagere_fermee");
     let etagere_ouverte = document.querySelector(".etagere_ouverte");
+    let guirlande = document.querySelector(".guirlande1");
+    let inventaire_guirlande = document.querySelector(".inventaire_guirlande");
 
 
+    let placement_guirlande = document.querySelector(".placement_guirlande");
+
+    /*
+    clic sur etagere fermee ouvre etagere et affiche objets dans etagere 
+    clic sur objets dans etagere affiche objets dans inventaire
+    clic sur objets dans inventaire change curseur souris
+    clicpartout avec curseur souris modifie affiche objet dans la scene 
+
+    */
     etagere_fermee.addEventListener("click", function () {
         etagere_ouverte.style.display = 'block';
         etagere_fermee.style.display = 'none';
+
     });
 
     etagere_ouverte.addEventListener("click", function () {
         etagere_ouverte.style.display = 'none';
         etagere_fermee.style.display = 'block';
+        guirlande.style.display = 'none';
+    });
+    let guirlande_placee = false;
+
+    guirlande.addEventListener("click", function () {
+        if (!guirlande_placee) {
+            inventaire_guirlande.style.display = 'block';
+            guirlande.style.display = 'none';
+            guirlande_placee = true;
+        }
     });
 
+    inventaire_guirlande.addEventListener("click", function () {
+        etagere_ouverte.style.display = 'block';
+        document.body.style.cursor = 'url(/medias/cursor/cursor_guirlande_1.png), auto';
+        console.log("aaaaaa")
 
-/*ballon
-guirlande
+    });
 
-speaker quand on eteint la lumiere 
-*/
+    placement_guirlande.addEventListener("click", function () {
+        guirlande.style.display = 'block';
+        guirlande.classList.add("guirlande1_accrochee");
+        guirlande.classList.remove("guirlande1");
+        document.body.style.cursor = 'pointer, auto';
+        console.log("bbbbbbbbbbbbbbbbbbbbbbbbbbb")
+    });
+
+    /*ballon
+    guirlande
+
+    speaker quand on eteint la lumiere 
+    */
 }

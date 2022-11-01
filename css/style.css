@@ -131,6 +131,10 @@ section:nth-of-type(1) {
     right: 2.5vw;
 }
 
+.inventaire_guirlande {
+    display: none;
+}
+
 
 
 
@@ -208,47 +212,48 @@ section:nth-of-type(1) {
     height: 10vh;
     width: auto;
     position: absolute;
+    transform: rotate(-10deg);
 }
 
-.cadre1 {
+#cadre1 {
     height: 22vh;
     left: 42vw;
     top: 22vh;
-    transform: rotate(-10deg);
+    /* transform: rotate(-10deg); */
 
 }
 
-.cadre2 {
+#cadre2 {
     left: 50vw;
     top: 22vh;
-    transform: rotate(-7deg);
+    /* transform: rotate(-7deg); */
 
 }
 
-.cadre4 {
+#cadre4 {
     left: 58vw;
     top: 22vh;
 }
 
 
-.cadre5 {
+#cadre5 {
     left: 58vw;
     top: 34vh;
-    transform: rotate(8deg);
+    /* transform: rotate(8deg); */
 
 }
 
-.cadre6 {
+#cadre6 {
     left: 54vw;
     top: 34vh;
-    transform: rotate(5deg);
+    /* transform: rotate(5deg); */
 
 }
 
-.cadre7 {
+#cadre7 {
     left: 50vw;
     top: 34vh;
-    transform: rotate(3deg);
+    /* transform: rotate(3deg); */
 
 }
 
@@ -447,6 +452,8 @@ section:nth-of-type(1) {
     position: absolute;
     top: 55vh;
     left: 13.7vw;
+    z-index: 2;
+
 }
 
 .etagere_ouverte {
@@ -457,5 +464,34 @@ section:nth-of-type(1) {
     left: 13.7vw;
     z-index: 0;
     display: none;
+    z-index: 0;
 
+}
+
+
+
+
+.guirlande1 {
+    height: 2vh;
+    width: auto;
+    position: absolute;
+    top: 60vh;
+    left: 20vw;
+    z-index: 1;
+    /* display: ; display none au départ, display block à l'ouverture de l'étagère et placement après clic*/
+}
+
+
+.guirlande1_accrochee {
+    height: 8vh;
+    width: auto;
+    position: absolute;
+    top: 10vh;
+    left: 30vw;
+    display: block;
+}
+
+.placement_guirlande {
+    width: 70vw;
+    height: 40vh;
 }
