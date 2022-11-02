@@ -6,15 +6,6 @@
 // start pour commencer le jeu et voir l'intro et play pour commencer à jouer
 
 
-/*let elementsArray = document.querySelectorAll("whatever");
-
-elementsArray.forEach(function(elem) {
-    elem.addEventListener("input", function() {
-        //this function does stuff
-    });
-});
-*/
-
 
 // BOOLEENS POUR FAIRE AVANCER LE JEU
 
@@ -22,15 +13,15 @@ elementsArray.forEach(function(elem) {
 let cadres_repositionnes = false;
 let feuilles_retirees = false;
 let livres_ranges = false;
+let coussins_reposes = false;
 
 let compteur_feuilles = 0;
 let compteur_livres = 0;
 let compteur_cadres = 0;
 
+let compteur_coussins = 0;
 
-// if(feuille1 && feuille2 && feuille3 && feuille4 && feuille5){
-//     feuilles_retirees 
-// }
+
 
 
 // function end(){
@@ -42,34 +33,42 @@ let compteur_cadres = 0;
 
 // }
 
-/* if (gagné){
-    let victoire = document.querySelector(".bravo");
-     victoire.style.display = 'block';
-}
-else {
-let defaite = document.querySelector(".dommage");
-     defaite.style.display = 'block';
-}
-}
-} */
-
-// setTimeout(end, 10000);
 
 
 
 playGame();
 
 function playGame() {
+    const game_lost = setTimeout(endLose, 120000);
     startGame();
+
     afficherTodolist();
     cleanRoom();
-    decorateRoom();
 
-    if (feuilles_retirees) {
+    // clean room -> decorate room -> prepare room
 
-    }
-    // if(feuilles_retirees && cadres_repositionnes)
 }
+
+
+
+function endLose() {
+    let game_div = document.querySelector(".game_div");
+    let intro_div = document.querySelector(".introduction_div");
+    game_div.style.display = 'none';
+    intro_div.style.display = 'block';
+
+    // let defaite = document.querySelector(".dommage");
+    //  defaite.style.display = 'block';
+
+}
+
+function endWin() {
+    let victoire = document.querySelector(".bravo");
+    victoire.style.display = 'block';
+
+
+}
+
 
 
 // HORLOGE
@@ -152,50 +151,98 @@ function afficherTodolist() {
 
 // BOUCLE SUR LE NETTOYAGE 
 function cleanRoom() {
-    // RETIRE ROTATION CADRES
 
 
+
+    // let cadres = document.querySelectorAll('.cadres');
+    // let cadres_bool = new Array();
+
+
+    // for (j of cadres) {
+    //     j.addEventListener('click', function () {
+    //         this.classList.add("cadres-remove-rotation");
+    //         cadres_bool[this.id] = true;
+    //         console.log(cadres_bool)
+    //         //
+    //         // console.log(compteur_cadres)
+    //         //validation des cadres pas bonne 
+
+    //         for (i = 0; i < cadres_bool.length; i++) {
+
+    //             while (cadres_bool[i] == true) {
+
+    //                 compteur_cadres++;
+    //             }
+    //             console.log(compteur_cadres)
+    //             if (compteur_cadres == 4) {
+    //                 cadres_repositionnes = true;
+    //                 let todo_cadres = document.querySelector('.todo_cadres');
+    //                 todo_cadres.classList.add("li_barres");
+
+    //             }
+    //             compteur_cadres = 0;
+
+    //             // if (cadres_bool[i] == false) {
+    //             //     cadres_repositionnes = false;
+
+    //             //     console.log("bravo2")
+    //             // } else {
+    //             //     cadres_repositionnes = true;
+    //             //     let todo_cadres = document.querySelector('.todo_cadres');
+    //             //     todo_cadres.classList.add("li_barres");
+
+    //             // }
+    //         }
+    //     });
+
+
+
+    // }
+
+    // RETIRE ROTATION CADRES et affiche dans la to do list 
+    // array de booleens pour verifier que tous les cadres ont ete remis a leur position souhaitee
     let cadres = document.querySelectorAll('.cadres');
-    let cadres_bool = new Array();
+    let cadres_bool = new Array(false, false, false, false, false, false)
+    let cadres_name = new Array("cadre1", "cadre2", "cadre4", "cadre5", "cadre6", "cadre7")
+    let todo_cadres = document.querySelector('.todo_cadres');
 
 
-    for (j of cadres) {
-        j.addEventListener('click', function () {
+    console.log('clean')
+
+    for (i = 0; i < cadres.length; i++) {
+
+        cadres[i].addEventListener("click", function () {
             this.classList.add("cadres-remove-rotation");
-            cadres_bool[this.id] = true;
-            console.log(cadres_bool)
-            //
-            // console.log(compteur_cadres)
-            //validation des cadres pas bonne 
 
-            for (i = 0; i < cadres_bool.length; i++) {
+            for (j = 0; j < cadres_name.length; j++) {
+                if (this.id == cadres_name[j]) {
+                    //console.log('cadre')
+                    cadres_bool[j] = true;
+                }
+            }
 
-                while (cadres_bool[i] == true) {
-
+            for (k = 0; k < cadres_bool.length; k++) {
+                if (cadres_bool[k] == true) {
+                    //console.log('while')
                     compteur_cadres++;
                 }
-                console.log(compteur_cadres)
-                if (compteur_cadres > 6) {
-                    cadres_repositionnes = true;
-                    let todo_cadres = document.querySelector('.todo_cadres');
-                    todo_cadres.classList.add("li_barres");
-
-                }
-compteur_cadres = 0;
-
-                // if (cadres_bool[i] == false) {
-                //     cadres_repositionnes = false;
-
-                //     console.log("bravo2")
-                // } else {
-                //     cadres_repositionnes = true;
-                //     let todo_cadres = document.querySelector('.todo_cadres');
-                //     todo_cadres.classList.add("li_barres");
-
-                // }
             }
-        });
 
+
+            //console.log(compteur)
+
+            if (compteur_cadres == 5) {
+                //console.log('NICE')
+                cadres_repositionnes = true;
+                todo_cadres.classList.add("li_barres");
+            }
+
+            compteur_cadres = 0;
+
+            console.log(cadres_repositionnes)
+            verificationCleanRoom();
+
+        })
 
 
     }
@@ -212,6 +259,7 @@ compteur_cadres = 0;
     let inventaire_feuilles = document.querySelector('.inventaire_feuilles');
 
     let p_compteur_feuilles = document.querySelector('.p_compteur_feuilles');
+    let todo_feuilles = document.querySelector('.todo_feuilles');
 
 
     for (i of feuilles) {
@@ -227,13 +275,15 @@ compteur_cadres = 0;
 
             if (compteur_feuilles > 5) {
                 feuilles_retirees = true;
-                let todo_feuilles = document.querySelector('.todo_feuilles');
 
                 todo_feuilles.classList.add("li_barres");
-                console.log("bravo")
+                // console.log("bravo")
             }
-        });
 
+            console.log(feuilles_retirees)
+            verificationCleanRoom();
+
+        });
 
 
     }
@@ -242,6 +292,8 @@ compteur_cadres = 0;
     // COUSSINS
     //ESSAYER UN DRAG EVENT SUR LES COUSSINS 
     let coussins = document.querySelectorAll(".coussins");
+    let todo_coussins = document.querySelector('.todo_coussins');
+
     console.log(coussins.length)
     for (let i = 0; i < coussins.length; i++) {
         coussins[i].addEventListener('click', function () {
@@ -252,10 +304,21 @@ compteur_cadres = 0;
 
             coussins[i].classList.add(choix_de_coussin);
             // coussins[i].classList.add(choix_de_curseur);
-            console.log(i)
-            console.log(choix_de_coussin)
-        })
+            // console.log(i)
+            // console.log(choix_de_coussin)
+            compteur_coussins++;
 
+            if (compteur_coussins == 4) {
+                coussins_reposes = true;
+                todo_coussins.classList.add("li_barres");
+            }
+            verificationCleanRoom();
+
+
+
+
+
+        })
     }
 
 
@@ -284,23 +347,28 @@ compteur_cadres = 0;
 
 
     let livres = document.querySelectorAll(".img_livre")
-    let livres_range = document.querySelectorAll(".img_livre_range")
+    let livre_range = document.querySelectorAll(".img_livre_range")
+    let todo_livres = document.querySelector('.todo_livres');
+
 
     for (let i = 0; i < livres.length; i++) {
         livres[i].addEventListener('click', function () {
             //let livre_range = livres[i] + "_range";
             //console.log(livre_range)
             livres[i].style.display = "none";
-            livres_range[i].style.display = "block";
+            livre_range[i].style.display = "block";
             compteur_livres++;
+            console.log(compteur_livres)
+
+
+            if (compteur_livres == 3) {
+                livres_ranges = true;
+                todo_livres.classList.add("li_barres");
+            }
+            verificationCleanRoom();
+
         })
-        if (compteur_livres == 2) {
-            livres_ranges = true;
-            console.log("bravo")
-        }
     }
-
-
 }
 
 
@@ -317,8 +385,13 @@ function decorateRoom() {
     let guirlande = document.querySelector(".guirlande1");
     let inventaire_guirlande = document.querySelector(".inventaire_guirlande");
 
+    let guirlande_placee = false;
 
     let placement_guirlande = document.querySelector(".placement_guirlande");
+
+    let todo_guirlande = document.querySelector('.todo_guirlande');
+
+
 
     /*
     clic sur etagere fermee ouvre etagere et affiche objets dans etagere 
@@ -338,7 +411,7 @@ function decorateRoom() {
         etagere_fermee.style.display = 'block';
         guirlande.style.display = 'none';
     });
-    let guirlande_placee = false;
+
 
     guirlande.addEventListener("click", function () {
         if (!guirlande_placee) {
@@ -352,20 +425,32 @@ function decorateRoom() {
         etagere_ouverte.style.display = 'block';
         document.body.style.cursor = 'url(/medias/cursor/cursor_guirlande_1.png), auto';
         console.log("aaaaaa")
-
+        placement_guirlande.classList.add("div_placement_guirlande");
     });
 
     placement_guirlande.addEventListener("click", function () {
         guirlande.style.display = 'block';
         guirlande.classList.add("guirlande1_accrochee");
         guirlande.classList.remove("guirlande1");
-        document.body.style.cursor = 'pointer, auto';
-        console.log("bbbbbbbbbbbbbbbbbbbbbbbbbbb")
+        document.body.style.cursor = "auto";
+        todo_guirlande.classList.add("li_barres");
+
     });
+
 
     /*ballon
     guirlande
-
+nouveaux objets
     speaker quand on eteint la lumiere 
     */
+}
+
+
+// function pour verifier que le nettoyage de la piece est bien fait
+// lancement de la partie du jeu sur la decoration
+function verificationCleanRoom() {
+
+    if (cadres_repositionnes && feuilles_retirees && coussins_reposes && livres_ranges) {
+        decorateRoom();
+    }
 }

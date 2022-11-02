@@ -22,11 +22,13 @@ body {
 
 h1,
 h2,
-p {
-    font-family: 'Inter', sans-serif;
+p, li {
+    /* font-family: 'Inter', sans-serif; */
     font-family: 'Patrick Hand', cursive;
 
 }
+
+h1{font-size:xx-large;}
 
 /* SECTION DU JEU */
 section:nth-of-type(1) {
@@ -49,6 +51,54 @@ section:nth-of-type(1) {
     position: absolute;
     left: 69vw;
 }
+
+
+/* BOUTON DE JEU 
+https://getcssscan.com/css-buttons-examples
+BY JOE BOCOCK */
+.button-52 {
+  font-size: 16px;
+  font-weight: 200;
+  letter-spacing: 1px;
+  padding: 10px 17px 10px;
+  outline: 0;
+  border: 1px solid black;
+  cursor: pointer;
+  position: relative;
+  background-color: rgba(0, 0, 0, 0);
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  border-radius: 20px;
+}
+
+.button-52:after {
+  content: "";
+  background-color: #ffc4dd;
+  width: 100%;
+  z-index: -1;
+  position: absolute;
+  height: 100%;
+  top: 7px;
+  left: 7px;
+  transition: 0.2s;
+  border-radius: 20px;
+
+}
+
+.button-52:hover:after {
+  top: 0px;
+  left: 0px;
+}
+
+@media (min-width: 768px) {
+  .button-52 {
+    padding: 13px 50px 13px;
+  }
+}
+
+
+
 
 /* SECTION INVENTAIRE */
 
@@ -112,13 +162,7 @@ section:nth-of-type(1) {
     display: none;
 }
 
-.todolist {
-    width: 5%;
-    height: auto;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-}
+
 
 .inventaire_feuilles {
     display: none;
@@ -161,10 +205,10 @@ section:nth-of-type(1) {
     height: 100%;
     display: none;
     background-image: url("../medias/fond.svg");
-
     background-size: cover;
-    border-radius: 40px;
-
+    border-radius: 40px;    
+animation: changement_image_fond 120s ease-in-out;
+animation-fill-mode:forwards;
 
 }
 
@@ -174,12 +218,12 @@ section:nth-of-type(1) {
 /* SECTION TODO LIST */
 #todo_section {
     width: 15vw;
-    height: 60vh;
+    height: 78vh;
     position: absolute;
     left: 2vw;
     top: 6vh;
-    transform: rotate(-5deg);
-    border: solid 1px black;
+    /* transform: rotate(-5deg); */
+    border: solid 1px #d4d3b1;
     border-radius: 20px;
     font-size: 1.1em;
     display: flex;
@@ -187,9 +231,27 @@ section:nth-of-type(1) {
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
-    background-color: #FDE8E7;
-
+    background-color: #fffed7;
+    z-index: 10;
     display: none;
+    padding: 2%;
+transition: 1s;
+}
+
+#todo_section:hover{
+    transform: scale(1.02);
+    background-color: #ffe0d4;
+
+}
+
+#todo_section p{
+text-align: justify;
+}
+
+li{
+font-size: 0.8em;
+line-height: 1;
+text-align: justify;
 
 }
 
@@ -206,27 +268,54 @@ section:nth-of-type(1) {
 
 /* JEU */
 
+/* table et todolist a recuperer */
+
+
+.todolist {
+    width: 5%;
+    height: auto;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    cursor: pointer;
+}
+
+.table{
+    width: 12vw;
+    height: auto;
+    position: absolute;
+    top: 64%;
+    left: 47%;
+}
+
+
+
+
+
 /* cadres à redresser */
 
 .cadres {
     height: 10vh;
     width: auto;
     position: absolute;
-    transform: rotate(-10deg);
+    /* transform: rotate(-10deg); */
+    transition: transform .2s;
+    cursor: pointer;
 }
+
 
 #cadre1 {
     height: 22vh;
     left: 42vw;
     top: 22vh;
-    /* transform: rotate(-10deg); */
+    transform: rotate(-10deg);
 
 }
 
 #cadre2 {
     left: 50vw;
     top: 22vh;
-    /* transform: rotate(-7deg); */
+    transform: rotate(-7deg);
 
 }
 
@@ -239,26 +328,26 @@ section:nth-of-type(1) {
 #cadre5 {
     left: 58vw;
     top: 34vh;
-    /* transform: rotate(8deg); */
+    transform: rotate(8deg);
 
 }
 
 #cadre6 {
     left: 54vw;
     top: 34vh;
-    /* transform: rotate(5deg); */
+    transform: rotate(5deg);
 
 }
 
 #cadre7 {
     left: 50vw;
     top: 34vh;
-    /* transform: rotate(3deg); */
+    transform: rotate(3deg);
 
 }
 
 .cadres-remove-rotation {
-    transform: rotate(0deg);
+    transform: rotate(0deg) !important;
 
 }
 
@@ -274,6 +363,7 @@ section:nth-of-type(1) {
     left: 70vw;
     top: 48vh;
     z-index: 2;
+    
 
 }
 
@@ -281,6 +371,7 @@ section:nth-of-type(1) {
     height: 2vh;
     width: auto;
     position: absolute;
+    cursor: pointer;
 }
 
 
@@ -309,6 +400,7 @@ section:nth-of-type(1) {
     position: absolute;
     left: 35vw;
     top: 54vh;
+    
 }
 
 
@@ -335,6 +427,7 @@ section:nth-of-type(1) {
     left: 20vw;
     top: 34.5vh;
     transform: rotate(80deg);
+    cursor: pointer;
 }
 
 .plante3_range {
@@ -352,7 +445,7 @@ section:nth-of-type(1) {
     left: 27vw;
     top: 48vh;
     transform: rotate(-100deg);
-
+    cursor: pointer;
 }
 
 .plante4_range {
@@ -372,13 +465,13 @@ section:nth-of-type(1) {
     height: 12vh;
     width: auto;
     position: absolute;
+    cursor: pointer;
 }
 
 
 .coussin1 {
     left: 40vw;
     top: 65vh;
-
 
 
 }
@@ -402,11 +495,14 @@ section:nth-of-type(1) {
 } */
 .coussin2 {
     left: 50vw;
-    top: 78vh;
-
+    top: 80vh;
+    z-index: 4;
     transform: rotate(-60deg);
-
 }
+/* .coussin2:hover {
+    transition-duration: 500ms;
+    transform: scale(1.05);
+} */
 
 .coussin3 {
     left: 59vw;
@@ -414,36 +510,114 @@ section:nth-of-type(1) {
 }
 
 .coussin4 {
-    left: 30vw;
-    top: 64vh;
-    z-index: 2;
+    left: 46vw;
+    top: 68vh;
+    z-index: 3;
 }
 
 
 .coussin1_range {
     left: 44vw;
     top: 53vh;
+    z-index: 0;
 }
 
 .coussin2_range {
     left: 46vw;
     top: 54vh;
     transform: rotate(0deg);
+    z-index: 0;
+
 }
 
 .coussin3_range {
     left: 64vw;
     top: 53vh;
+    z-index: 0;
+
 }
 
 .coussin4_range {
     left: 55vw;
     top: 53vh;
+    z-index: 0;
+
 }
 
 
 
 /* LIVRES*/
+
+
+.img_livre {
+    height: 4%;
+    width: 6%;
+    position: absolute;
+    cursor: pointer;
+}
+
+.livre1 {
+    left: 66vw;
+    top: 60vh;
+    height: 3%;
+    width: 4%;
+    position: absolute;
+    transform: rotate(-60deg);
+    z-index: 2;
+}
+
+.livre2 {
+    left: 22vw;
+    top: 65vh;
+    height: 4%;
+    width: 6%;
+    position: absolute;
+    z-index: 4;
+}
+
+.livre3 {
+    left: 22vw;
+    top: 65vh;
+    height: 4%;
+    width: 6%;
+    position: absolute;
+    z-index: 4;
+}
+
+.livre1_range {
+    left: 15vw;
+    top: 49vh;
+    height: 6%;
+    width: 6%;
+    position: absolute;
+    display: none;
+}
+
+.livre2_range {
+    left: 14vw;
+    top: 47vh;
+    height: 8%;
+    width: 6%;
+    position: absolute;
+    display: none;
+}
+
+.livre3_range {
+    left: 16vw;
+    top: 47vh;
+    height: 8%;
+    width: 6%;
+    position: absolute;
+    display: none;
+}
+
+
+
+
+
+
+
+/* DECORATION APPARTEMENT */
 
 
 .etagere_fermee {
@@ -483,6 +657,7 @@ section:nth-of-type(1) {
 
 
 .guirlande1_accrochee {
+    content: url("/medias/objets/guirlande1_longue.svg");
     height: 8vh;
     width: auto;
     position: absolute;
@@ -491,7 +666,84 @@ section:nth-of-type(1) {
     display: block;
 }
 
+
 .placement_guirlande {
+    width: 0vw;
+    height: 0vh;
+}
+.div_placement_guirlande {
     width: 70vw;
     height: 40vh;
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* TRANSITION DES IMAGES DE JOUR ET DE NUIT DU FOND */
+
+.filtre_nuit{
+opacity: 0;
+width: 1024px;
+    height: 576px;
+    border-radius: 40px;
+animation: changement_filtre_fond 120s;
+z-index: 10;
+position: absolute;
+animation-fill-mode:forwards;
+top: 5vh;
+left: 14vw;
+pointer-events: none;
+
+
+}
+
+
+.filtre_nuit_lumiere{
+    display: none;
+    width: 1024px;
+        height: 576px;
+        border-radius: 40px;
+    z-index: 11;
+    position: absolute;
+    animation-fill-mode:forwards;
+    top: 5vh;
+    left: 14vw;
+    pointer-events: none;
+    
+    
+    }
+
+    /* filtre lumiere a mettre en display none au depart et addevenetlistener dessus pour le voir et supprimer le filtre nuit */
+
+@keyframes changement_filtre_fond {
+    0% {
+  }
+  100% {
+
+    opacity: 1;
+  }
+  }
+
+
+  
+
+  @keyframes changement_image_fond {
+    0% {
+  }
+  50% {
+    background-image: url("../medias/fond_nuit.svg");
+  }
+  }
+  
