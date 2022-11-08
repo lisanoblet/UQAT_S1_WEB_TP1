@@ -248,3 +248,127 @@
     display: none;
 }
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    // let cadres = document.querySelectorAll('.cadres');
+    // let cadres_bool = new Array();
+
+
+    // for (j of cadres) {
+    //     j.addEventListener('click', function () {
+    //         this.classList.add("cadres-remove-rotation");
+    //         cadres_bool[this.id] = true;
+    //         console.log(cadres_bool)
+    //         //
+    //         // console.log(compteur_cadres)
+    //         //validation des cadres pas bonne 
+
+    //         for (i = 0; i < cadres_bool.length; i++) {
+
+    //             while (cadres_bool[i] == true) {
+
+    //                 compteur_cadres++;
+    //             }
+    //             console.log(compteur_cadres)
+    //             if (compteur_cadres == 4) {
+    //                 cadres_repositionnes = true;
+    //                 let todo_cadres = document.querySelector('.todo_cadres');
+    //                 todo_cadres.classList.add("li_barres");
+
+    //             }
+    //             compteur_cadres = 0;
+
+    //             // if (cadres_bool[i] == false) {
+    //             //     cadres_repositionnes = false;
+
+    //             //     console.log("bravo2")
+    //             // } else {
+    //             //     cadres_repositionnes = true;
+    //             //     let todo_cadres = document.querySelector('.todo_cadres');
+    //             //     todo_cadres.classList.add("li_barres");
+
+    //             // }
+    //         }
+    //     });
+
+
+
+    // }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+.filtre_nuit {
+    opacity: 0;
+    width: 1024px;
+    height: 576px;
+    border-radius: 40px;
+    /* animation: changement_filtre_fond 120s; */
+    z-index: 10;
+    position: absolute;
+    /* animation-fill-mode: forwards; */
+    top: 5vh;
+    left: 14vw;
+    pointer-events: none;
+
+
+}
+
+
+.filtre_nuit_lumiere {
+    display: none;
+    width: 1024px;
+    height: 576px;
+    border-radius: 40px;
+    z-index: 11;
+    position: absolute;
+    /* animation-fill-mode: forwards; */
+    top: 5vh;
+    left: 14vw;
+    pointer-events: none;
+
+
+}
+
+
+
+
+
+
+ z-index: 10;
+    width: 80vw;
+    height: 90vh;
+    /* border: solid 2px rgb(148, 148, 232); */
+    border-radius: 40px;
+
+    display: none;
+    /* background-color: rgb(162, 162, 255); */
+    background: rgba(153,120,255, 0.2);
+    /* background: radial-gradient(circle, rgba(153,120,255,1) 0%, rgba(163,70,252,0) 100%);  */
+    border-radius: 40px;
+    position: absolute;

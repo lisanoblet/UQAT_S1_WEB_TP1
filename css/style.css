@@ -1,55 +1,115 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter&family=Open+Sans&family=Patrick+Hand&display=swap');
 
-
-
 /* Général  */
 * {
     text-align: center;
+    margin: 0;
+    padding: 0;
 
 }
 
 body {
     font-family: "Jost", sans-serif;
+    height: 100vh;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     overflow: hidden;
-    background-color: #E6E6E6;
-    background: linear-gradient(320deg, rgba(224, 196, 255, 0.2957515769979867) 0%, rgba(255, 203, 224, 0.30135381789434523) 100%);
-
+    /* background-color: #E6E6E6;
+    background: linear-gradient(320deg, rgba(224, 196, 255, 0.2957515769979867) 0%, rgba(255, 203, 224, 0.30135381789434523) 100%); */
+    background: linear-gradient(-45deg, #ffe7e1, #ffe0ec, #d7f4ff, #d5fff5);
+    background-size: 400% 400%;
+    animation: gradient 60s ease infinite;
 }
 
 h1,
 h2,
-p, li {
+p,
+li {
     /* font-family: 'Inter', sans-serif; */
     font-family: 'Patrick Hand', cursive;
+}
+
+h1 {
+    font-size: 4em;
 
 }
 
-h1{font-size:xx-large;}
-
 /* SECTION DU JEU */
-section:nth-of-type(1) {
-    /* width: 950px;
-    height: 500px; 
-    margin-top: 80px;*/
-    width: 1024px;
-    height: 576px;
-    margin-top: 4vh;
+#introduction_section {
+    width: 1225px;
+    height: 660px;
     border: solid 2px black;
     border-radius: 40px;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    background-color: white;
+    z-index: 0;
+    position: relative;
+}
+
+
+.guirlande_intro {
+    width: 1200px;
+    position: absolute;
+    top: 60px;
+    left: 10px;
 }
 
 #timer {
-    font-size: 1.5em;
+    font-size: 1.2em;
     position: absolute;
-    left: 69vw;
+    left: 172px;
+    top: 255px;
+    z-index: 15;
+    color: red;
+}
+
+.reveil {
+    width: 100px;
+    height: auto;
+    position: absolute;
+    left: 154px;
+    top: 244px;
+    z-index: 10;
+}
+
+.radio {
+    width: 75px;
+    height: auto;
+    position: absolute;
+    left: 200px;
+    top: 138px;
+    z-index: 10;
+}
+
+.radio_animation {
+    animation: rotation_radio 1s ease-in-out infinite;
+}
+
+@keyframes rotation_radio {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    25% {
+        transform: rotate(4deg);
+    }
+
+    50% {
+        transform: rotate(0deg);
+    }
+
+    75% {
+        transform: rotate(-4deg);
+    }
+
+    100% {
+        transform: rotate(0deg);
+    }
 }
 
 
@@ -57,47 +117,45 @@ section:nth-of-type(1) {
 https://getcssscan.com/css-buttons-examples
 BY JOE BOCOCK */
 .button-52 {
-  font-size: 16px;
-  font-weight: 200;
-  letter-spacing: 1px;
-  padding: 10px 17px 10px;
-  outline: 0;
-  border: 1px solid black;
-  cursor: pointer;
-  position: relative;
-  background-color: rgba(0, 0, 0, 0);
-  user-select: none;
-  -webkit-user-select: none;
-  touch-action: manipulation;
-  border-radius: 20px;
+    margin: 2%;
+    font-size: 16px;
+    font-weight: 200;
+    letter-spacing: 1px;
+    padding: 10px 17px 10px;
+    outline: 0;
+    border: 1px solid black;
+    cursor: pointer;
+    position: relative;
+    background-color: rgba(0, 0, 0, 0);
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+    border-radius: 20px;
 }
 
 .button-52:after {
-  content: "";
-  background-color: #ffc4dd;
-  width: 100%;
-  z-index: -1;
-  position: absolute;
-  height: 100%;
-  top: 7px;
-  left: 7px;
-  transition: 0.2s;
-  border-radius: 20px;
-
+    content: "";
+    background-color: #F5E196;
+    width: 100%;
+    z-index: -1;
+    position: absolute;
+    height: 100%;
+    top: 7px;
+    left: 7px;
+    transition: 0.2s;
+    border-radius: 20px;
 }
 
 .button-52:hover:after {
-  top: 0px;
-  left: 0px;
+    top: 0px;
+    left: 0px;
 }
 
 @media (min-width: 768px) {
-  .button-52 {
-    padding: 13px 50px 13px;
-  }
+    .button-52 {
+        padding: 13px 50px 13px;
+    }
 }
-
-
 
 
 /* SECTION INVENTAIRE */
@@ -106,13 +164,12 @@ BY JOE BOCOCK */
     display: none;
 }
 
-
 #inventaire_section {
     width: 8vw;
     height: 70vh;
     position: absolute;
-    right: 5vw;
-    top: 1vh;
+    right: 4vw;
+    top: 11vh;
     border: solid 2px black;
     border-radius: 20px;
     display: flex;
@@ -123,37 +180,23 @@ BY JOE BOCOCK */
     background: white;
 }
 
-
-/* .inventaire_section>div {
-    width: 5vw;
-    height: 5vh;
-    border: solid 1px rgb(203, 53, 53);
-    border-radius: 20px;
-   
-    background-color: beige;
-}  */
-
-
 /* SECTION INVENTAIRE */
 .inventaire_div {
-    width: 4vw;
-    height: 4vw;
+    width: 5vw;
+    height: 5vw;
     margin-bottom: 2vh;
     border-radius: 30%;
-
     border: solid 1px rgb(61, 61, 61);
     background-color: beige;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-
 }
 
 .inventaire_div>img {
     border-radius: 20px;
 }
-
 
 
 /* OBJETS INDIVIDUELS DE L'INVENTAIRE*/
@@ -162,28 +205,31 @@ BY JOE BOCOCK */
     display: none;
 }
 
-
-
 .inventaire_feuilles {
     display: none;
+    width: 65px;
+    padding-top: 30px;
 }
 
+/* 
 .p_compteur_feuilles {
     z-index: 2;
     position: absolute;
     top: 16.5vh;
     right: 2.5vw;
-}
+} */
 
 .inventaire_guirlande {
     display: none;
 }
 
+.inventaire_bougies {
+    display: none;
+}
 
-
-
-
-
+.inventaire_ballons {
+    display: none;
+}
 
 
 /* div de jeu */
@@ -193,23 +239,24 @@ BY JOE BOCOCK */
 
 .introduction_div {
     display: none;
-    width: 50vw;
+    width: 60vw;
 }
 
 .introduction_div>p {
-    font-size: 1.2em;
+    font-size: 1.4em;
+    text-align: justify;
 }
 
 .game_div {
     width: 100%;
     height: 100%;
     display: none;
-    background-image: url("../medias/fond.svg");
+    background-image: url("../images/fond.svg");
     background-size: cover;
-    border-radius: 40px;    
-animation: changement_image_fond 120s ease-in-out;
-animation-fill-mode:forwards;
-
+    border-radius: 40px;
+    position: relative;
+    /* animation: changement_image_fond 120s ease-in-out; */
+    /* animation-fill-mode: forwards; */
 }
 
 
@@ -232,27 +279,30 @@ animation-fill-mode:forwards;
     justify-content: center;
     align-items: center;
     background-color: #fffed7;
-    z-index: 10;
+    z-index: 15;
     display: none;
     padding: 2%;
-transition: 1s;
+    transition: .5s;
 }
 
-#todo_section:hover{
+#todo_section:hover {
     transform: scale(1.02);
-    background-color: #ffe0d4;
-
+    background-color: #fffdd1;
 }
 
-#todo_section p{
-text-align: justify;
+#todo_section h2 {
+    margin-bottom: 8%;
 }
 
-li{
-font-size: 0.8em;
-line-height: 1;
-text-align: justify;
+#todo_section p {
+    text-align: justify;
+}
 
+li {
+    font-size: 0.8em;
+    line-height: 1;
+    text-align: justify;
+    margin: 8%;
 }
 
 .li_barres {
@@ -260,42 +310,102 @@ text-align: justify;
     color: grey;
 }
 
-
 /*-----------------------------------------------------------------------------------------*/
-
-
 
 
 /* JEU */
 
 /* table et todolist a recuperer */
 
-
 .todolist {
-    width: 5%;
+    width: 90px;
     height: auto;
     position: absolute;
-    top: 50%;
-    left: 50%;
+    top: 480px;
+    left: 600px;
     cursor: pointer;
+    z-index: 3;
 }
 
-.table{
-    width: 12vw;
+.attention1 {
+    display: block;
+    width: 10px;
     height: auto;
     position: absolute;
-    top: 64%;
-    left: 47%;
+    top: 420px;
+    left: 620px;
+    z-index: 3;
+
+}
+
+.attention2 {
+    display: block;
+    width: 10px;
+    height: auto;
+    position: absolute;
+    top: 416px;
+    left: 660px;
+    z-index: 3;
+
+}
+
+.attention3 {
+    display: block;
+    width: 10px;
+    height: auto;
+    position: absolute;
+    top: 420px;
+    left: 700px;
+    z-index: 3;
+
+}
+
+
+.point_exclamation {
+    animation: point_exclamation 2s infinite;
 }
 
 
 
+@keyframes point_exclamation {
+    0% {
+        transform: rotate(0);
+    }
+
+    25% {
+        transform: rotate(6deg);
+    }
+
+    50% {}
+
+    75% {
+        transform: rotate(-6deg);
+    }
+
+    100% {
+        transform: rotate(0);
+    }
+}
+
+
+
+
+.table {
+    width: 200px;
+    height: auto;
+    position: absolute;
+    /* top: 520px;
+    left: 680px; */
+    top: 480px;
+    left: 580px;
+
+}
 
 
 /* cadres à redresser */
 
 .cadres {
-    height: 10vh;
+    height: 70px;
     width: auto;
     position: absolute;
     /* transform: rotate(-10deg); */
@@ -303,366 +413,311 @@ text-align: justify;
     cursor: pointer;
 }
 
-
 #cadre1 {
-    height: 22vh;
-    left: 42vw;
-    top: 22vh;
+    height: 160px;
+    left: 490px;
+    top: 145px;
     transform: rotate(-10deg);
-
 }
 
 #cadre2 {
-    left: 50vw;
-    top: 22vh;
+    left: 625px;
+    top: 145px;
     transform: rotate(-7deg);
-
 }
 
 #cadre4 {
-    left: 58vw;
-    top: 22vh;
+    left: 750px;
+    top: 145px;
 }
 
-
 #cadre5 {
-    left: 58vw;
-    top: 34vh;
+    left: 750px;
+    top: 235px;
     transform: rotate(8deg);
-
 }
 
 #cadre6 {
-    left: 54vw;
-    top: 34vh;
+    left: 684px;
+    top: 235px;
     transform: rotate(5deg);
-
 }
 
 #cadre7 {
-    left: 50vw;
-    top: 34vh;
+    left: 616px;
+    top: 235px;
     transform: rotate(3deg);
-
 }
 
 .cadres-remove-rotation {
     transform: rotate(0deg) !important;
-
 }
-
 
 
 /* FEUILLES */
 
-
 .plante1 {
-    height: 40vh;
+    height: 250px;
     width: auto;
     position: absolute;
-    left: 70vw;
-    top: 48vh;
-    z-index: 2;
-    
-
+    left: 950px;
+    top: 390px;
+    z-index: 5;
 }
 
 .feuilles {
-    height: 2vh;
+    height: 15px;
     width: auto;
     position: absolute;
     cursor: pointer;
 }
 
-
 .feuille1 {
-    left: 60vw;
-    top: 88vh;
-
+    left: 820px;
+    top: 640px;
 }
 
 .feuille2 {
-    left: 75vw;
-    top: 85vh;
-
+    left: 960px;
+    top: 640px;
 }
 
 .feuille3 {
-    left: 70vw;
-    top: 88vh;
-
+    left: 1000px;
+    top: 630px;
 }
-
 
 .plante2 {
-    height: 20vh;
+    height: 150px;
     width: auto;
     position: absolute;
-    left: 35vw;
-    top: 54vh;
-    
+    left: 380px;
+    top: 400px;
 }
 
-
 .feuille2_1 {
-    left: 34vw;
-    top: 74vh;
+    left: 450px;
+    top: 550px;
 }
 
 .feuille2_2 {
-    left: 36vw;
-    top: 74vh;
+    left: 410px;
+    top: 560px;
 }
 
 .feuille2_3 {
-    left: 38vw;
-    top: 74vh;
+    left: 380px;
+    top: 550px;
 }
 
-
 .plante3 {
-    height: 10vh;
+    height: 50px;
     width: auto;
     position: absolute;
-    left: 20vw;
-    top: 34.5vh;
+    left: 50px;
+    top: 256px;
     transform: rotate(80deg);
     cursor: pointer;
 }
 
 .plante3_range {
-    left: 20vw;
-    top: 33vh;
-
+    left: 50px;
+    top: 248px;
     transform: rotate(0deg);
 }
 
-
 .plante4 {
-    height: 10vh;
+    height: 80px;
     width: auto;
     position: absolute;
-    left: 27vw;
-    top: 48vh;
+    left: 210px;
+    top: 342px;
     transform: rotate(-100deg);
     cursor: pointer;
 }
 
 .plante4_range {
-    left: 27vw;
-    top: 45vh;
+    left: 210px;
+    top: 318px;
     transform: rotate(0deg);
-
 }
 
 
 /* COUSSINS */
 
-
-
-
 .coussins {
-    height: 12vh;
+    height: 100px;
     width: auto;
     position: absolute;
     cursor: pointer;
 }
 
-
 .coussin1 {
-    left: 40vw;
-    top: 65vh;
-
-
+    left: 420px;
+    top: 460px;
 }
 
-/* 
-.cursor1{
-    cursor: url('../medias/cursor/cursor1.svg'), auto;
-
-}
-.cursor2{
-    cursor: url('../medias/cursor/cursor2.svg'), auto;
-
-}
-.cursor3{
-    cursor: url('../medias/cursor/cursor3.svg'), auto;
-
-}
-.cursor4{
-    cursor: url('../medias/cursor/cursor4.svg'), auto;
-
-} */
 .coussin2 {
-    left: 50vw;
-    top: 80vh;
+    left: 650px;
+    top: 520px;
     z-index: 4;
     transform: rotate(-60deg);
 }
+
 /* .coussin2:hover {
     transition-duration: 500ms;
     transform: scale(1.05);
 } */
 
 .coussin3 {
-    left: 59vw;
-    top: 70vh;
-}
-
-.coussin4 {
-    left: 46vw;
-    top: 68vh;
+    left: 750px;
+    top: 510px;
     z-index: 3;
 }
 
+.coussin4 {
+    left: 550px;
+    top: 510px;
+    z-index: 3;
+}
 
 .coussin1_range {
-    left: 44vw;
-    top: 53vh;
+    left: 820px;
+    top: 380px;
     z-index: 0;
 }
 
 .coussin2_range {
-    left: 46vw;
-    top: 54vh;
+    left: 550px;
+    top: 380px;
     transform: rotate(0deg);
-    z-index: 0;
-
+    z-index: 1;
 }
 
 .coussin3_range {
-    left: 64vw;
-    top: 53vh;
+    left: 850px;
+    top: 400px;
     z-index: 0;
-
 }
 
 .coussin4_range {
-    left: 55vw;
-    top: 53vh;
+    left: 510px;
+    top: 380px;
     z-index: 0;
-
 }
-
 
 
 /* LIVRES*/
 
-
 .img_livre {
-    height: 4%;
-    width: 6%;
-    position: absolute;
     cursor: pointer;
 }
 
 .livre1 {
-    left: 66vw;
-    top: 60vh;
-    height: 3%;
-    width: 4%;
+    left: 900px;
+    top: 425px;
+    height: 70px;
+    width: 70px;
     position: absolute;
     transform: rotate(-60deg);
     z-index: 2;
 }
 
 .livre2 {
-    left: 22vw;
-    top: 65vh;
-    height: 4%;
-    width: 6%;
+    left: 50px;
+    top: 156px;
+    height: 70px;
+    width: 70px;
     position: absolute;
     z-index: 4;
 }
 
 .livre3 {
-    left: 22vw;
-    top: 65vh;
-    height: 4%;
-    width: 6%;
+    left: 100px;
+    top: 350px;
+    height: 70px;
+    width: 70px;
     position: absolute;
     z-index: 4;
 }
 
 .livre1_range {
-    left: 15vw;
-    top: 49vh;
-    height: 6%;
-    width: 6%;
+    left: 20px;
+    top: 326px;
+    height: 70px;
+    width: 70px;
     position: absolute;
     display: none;
 }
 
 .livre2_range {
-    left: 14vw;
-    top: 47vh;
-    height: 8%;
-    width: 6%;
+    left: 35px;
+    top: 326px;
+    height: 70px;
+    width: 70px;
     position: absolute;
     display: none;
 }
 
 .livre3_range {
-    left: 16vw;
-    top: 47vh;
-    height: 8%;
-    width: 6%;
+    left: 1px;
+    top: 326px;
+    height: 70px;
+    width: 70px;
     position: absolute;
     display: none;
 }
-
-
-
-
-
 
 
 /* DECORATION APPARTEMENT */
 
 
 .etagere_fermee {
-    height: 15.5vh;
+    height: 125px;
     width: auto;
     position: absolute;
-    top: 55vh;
-    left: 13.7vw;
+    top: 400px;
+    left: 0px;
     z-index: 2;
+    cursor: pointer;
+
 
 }
 
 .etagere_ouverte {
-    height: 18.5vh;
+    height: 149px;
     width: auto;
     position: absolute;
-    top: 55vh;
-    left: 13.7vw;
+    top: 400px;
+    left: 0px;
     z-index: 0;
     display: none;
     z-index: 0;
-
 }
 
 
 
 
 .guirlande1 {
-    height: 2vh;
+    height: 40px;
     width: auto;
     position: absolute;
-    top: 60vh;
-    left: 20vw;
+    top: 415px;
+    left: 160px;
     z-index: 1;
-    /* display: ; display none au départ, display block à l'ouverture de l'étagère et placement après clic*/
+    cursor: pointer;
+
+    /* display none au départ, display block à l'ouverture de l'étagère et placement après clic*/
 }
 
 
 .guirlande1_accrochee {
-    content: url("/medias/objets/guirlande1_longue.svg");
-    height: 8vh;
+    content: url("/images/objets/guirlande1_longue.svg");
+    height: 60px;
     width: auto;
     position: absolute;
-    top: 10vh;
-    left: 30vw;
+    top: 50px;
+    left: 200px;
     display: block;
 }
 
@@ -671,15 +726,135 @@ text-align: justify;
     width: 0vw;
     height: 0vh;
 }
+
+.div_placement_guirlande:hover {
+    background-color: rgba(233, 213, 255, 0.296);
+    border-radius: 50px;
+
+}
+
 .div_placement_guirlande {
-    width: 70vw;
-    height: 40vh;
+    width: 80vw;
+    height: 30vh;
 }
 
 
 
 
 
+.bougies {
+    height: 50px;
+    width: auto;
+    position: absolute;
+    top: 465px;
+    left: 50px;
+    z-index: 1;
+    cursor: pointer;
+
+    /* display none au départ, display block à l'ouverture de l'étagère et placement après clic*/
+}
+
+
+.bougies_placees {
+    content: url("/images/objets/bougies.svg");
+    height: 70px;
+    width: auto;
+    position: absolute;
+    top: 420px;
+    left: 690px;
+    cursor: pointer;
+
+    display: block;
+}
+
+.placement_bougies {
+    width: 0vw;
+    height: 0vh;
+}
+
+.div_placement_bougies:hover {
+    background-color: rgba(140, 86, 198, 0.296);
+    border-radius: 50px;
+}
+
+.div_placement_bougies {
+    width: 10vw;
+    height: 20vh;
+    position: absolute;
+    top: 50vh;
+    left: 40vw;
+}
+
+.inventaire_bougies {
+    width: 50px;
+}
+
+
+
+
+
+
+.ballons {
+    height: 50px;
+    width: auto;
+    position: absolute;
+    top: 470px;
+    left: 210px;
+    z-index: 1;
+    cursor: pointer;
+
+    /* display none au départ, display block à l'ouverture de l'étagère et placement après clic*/
+}
+
+
+.ballons_gonfles {
+    content: url("/images/objets/ballons_gonfles.svg");
+    width: 150px;
+    height: auto;
+    position: absolute;
+    top: 120px;
+    left: 300px;
+    display: block;
+}
+
+.placement_ballons {
+    width: 0vw;
+    height: 0vh;
+}
+
+.div_placement_ballons:hover {
+    background-color: rgba(140, 86, 198, 0.296);
+    border-radius: 50px;
+
+}
+
+.div_placement_ballons {
+    width: 10vw;
+    height: 40vh;
+    position: absolute;
+    top: 10vh;
+    left: 22vw;
+}
+
+.inventaire_ballons {
+    width: 40px;
+}
+
+
+.taille_ballons {
+    transform: scale(10);
+}
+
+
+.lampe {
+    height: 320px;
+    width: auto;
+    position: absolute;
+    right: 150px;
+    top: 300px;
+    cursor: pointer;
+
+}
 
 
 
@@ -693,57 +868,131 @@ text-align: justify;
 
 /* TRANSITION DES IMAGES DE JOUR ET DE NUIT DU FOND */
 
-.filtre_nuit{
-opacity: 0;
-width: 1024px;
-    height: 576px;
-    border-radius: 40px;
-animation: changement_filtre_fond 120s;
-z-index: 10;
-position: absolute;
-animation-fill-mode:forwards;
-top: 5vh;
-left: 14vw;
-pointer-events: none;
+/* filtre lumiere a mettre en display none au depart et addevenetlistener dessus pour le voir et supprimer le filtre nuit */
+/* 
+@keyframes changement_filtre_fond {
+    0% {}
 
-
+    100% {
+        opacity: 1;
+    }
 }
 
 
-.filtre_nuit_lumiere{
-    display: none;
-    width: 1024px;
-        height: 576px;
-        border-radius: 40px;
-    z-index: 11;
-    position: absolute;
-    animation-fill-mode:forwards;
-    top: 5vh;
-    left: 14vw;
-    pointer-events: none;
-    
-    
+
+
+@keyframes changement_image_fond {
+    0% {}
+
+    50% {
+        background-image: url("../medias/fond_nuit.svg");
+    }
+} */
+
+
+
+@keyframes gradient {
+    0% {
+        background-position: 0% 50%;
     }
 
-    /* filtre lumiere a mettre en display none au depart et addevenetlistener dessus pour le voir et supprimer le filtre nuit */
+    50% {
+        background-position: 100% 50%;
+    }
 
-@keyframes changement_filtre_fond {
-    0% {
-  }
-  100% {
-
-    opacity: 1;
-  }
-  }
+    100% {
+        background-position: 0% 50%;
+    }
+}
 
 
-  
+/* 
+.fond_lumiere{
+    width: 80vw;
+height: 90vh;
+border-radius: 40px;
+pointer-events: none;
+position: absolute;
+z-index: 10;
+left: 10vw;
+top: 5vh;
+} */
 
-  @keyframes changement_image_fond {
-    0% {
+.fond_sans_lumiere {
+    width: 1222px;
+    height: 90vh;
+    border-radius: 40px;
+    pointer-events: none;
+    display: none;
+    position: absolute;
+    z-index: 100;
+}
+
+
+
+
+
+
+/* #fin_jeu_section{
+
+    width: 256px;
+    height: 144px;
+    margin-top: 4vh;
+    border: solid 2px black;
+    border-radius: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 0;
+    display: none;
+  } */
+
+
+
+
+.bravo {
+
+    display: none;
+    position: absolute;
+    width: 80vw;
+    height: 90vh;
+    border-radius: 40px;
+    z-index: 10;
+    top: 5vh;
+    left: 10vw;
+    background: rgb(255, 253, 192);
+padding-top: 10%;
+
+}
+
+.bravo > p{
+    width: 60vw;
+margin: auto;
+font-size: 1.5em;
+padding: 2%;
   }
-  50% {
-    background-image: url("../medias/fond_nuit.svg");
+
+.dommage {
+
+    display: none;
+    position: absolute;
+    width: 82vw;
+    height: 71vh;
+    border-radius: 40px;
+
+    z-index: 10;
+    top: 4vh;
+    left: 9vw;
+    background: rgba(153, 120, 255, 0.2);
+padding-top: 10%;
+
+}
+
+.dommage > p{
+    width: 60vw;
+margin: auto;
+font-size: 1.5em;
+padding: 2%;
   }
-  }
-  
